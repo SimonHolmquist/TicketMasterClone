@@ -1,0 +1,15 @@
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\bin\Debug\net9.0\Booking.Application.deps.json
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\bin\Debug\net9.0\Booking.Application.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\bin\Debug\net9.0\Booking.Application.pdb
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\bin\Debug\net9.0\Booking.Domain.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\bin\Debug\net9.0\Booking.Domain.pdb
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.csproj.AssemblyReference.cache
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.AssemblyInfoInputs.cache
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.AssemblyInfo.cs
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.csproj.CoreCompileInputs.cache
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking..A3DD8563.Up2Date
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\refint\Booking.Application.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\Booking.Application.pdb
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Application\obj\Debug\net9.0\ref\Booking.Application.dll

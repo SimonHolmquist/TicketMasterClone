@@ -1,0 +1,11 @@
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\bin\Debug\net9.0\Booking.Domain.deps.json
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\bin\Debug\net9.0\Booking.Domain.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\bin\Debug\net9.0\Booking.Domain.pdb
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\Booking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\Booking.Domain.AssemblyInfoInputs.cache
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\Booking.Domain.AssemblyInfo.cs
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\Booking.Domain.csproj.CoreCompileInputs.cache
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\Booking.Domain.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\refint\Booking.Domain.dll
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\Booking.Domain.pdb
+D:\Simon\Proyectos\TicketMasterClone\src\Services\Booking\Booking.Domain\obj\Debug\net9.0\ref\Booking.Domain.dll
