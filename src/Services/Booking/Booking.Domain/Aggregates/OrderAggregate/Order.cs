@@ -4,21 +4,22 @@ namespace Booking.Domain.Aggregates.OrderAggregate;
 
 public class Order : Entity, IAggregateRoot
 {
-    // DDD: Los sets son privados. Solo se modifican vía métodos.
-    public string? UserId { get; private set; }
+    // 1. Definimos la Regla de Negocio como constante pública
+    public const int MaxTicketsPerOrder = 4;
+
+    // 2. Definimos el mensaje de error reutilizando la constante
+    private const string MaxTicketsExceededMessage = "Maximum {0} tickets per order allowed";
+
+    public string UserId { get; private set; } = string.Empty;
     public DateTime OrderDate { get; private set; }
     public OrderStatus Status { get; private set; }
 
-    // Backing field para la colección
     private readonly List<OrderItem> _orderItems;
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
     public decimal Total => _orderItems.Sum(o => o.Quantity * o.UnitPrice);
 
-    protected Order()
-    {
-        _orderItems = [];
-    }
+    protected Order() => _orderItems = [];
 
     public Order(string userId) : this()
     {
@@ -27,23 +28,32 @@ public class Order : Entity, IAggregateRoot
         OrderDate = DateTime.UtcNow;
     }
 
-    // LÓGICA DE NEGOCIO: Añadir entrada
     public void AddOrderItem(int eventId, string eventName, decimal unitPrice, int quantity)
     {
-        // Regla de negocio: Máximo 4 tickets por evento en la misma orden
         var existingOrderForProduct = _orderItems.SingleOrDefault(o => o.EventId == eventId);
+
+        // Calculamos la cantidad total proyectada
+        var currentQuantity = existingOrderForProduct?.Quantity ?? 0;
+        var projectedTotal = _orderItems.Sum(i => i.Quantity) - currentQuantity + quantity + currentQuantity;
+
+        // Corrección: La validación debe ser sobre el total de tickets de la orden, no solo si agrega > 4 de golpe.
+        // Si ya tengo 3 y agrego 2, suma 5. Eso debe fallar.
+        int totalTicketsInOrder = _orderItems.Sum(i => i.Quantity);
+
+        // Si es un item nuevo, simplemente sumamos. Si ya existe, calculamos la diferencia.
+        // Simplificación: Validamos el total final esperado.
+        if (totalTicketsInOrder + quantity > MaxTicketsPerOrder)
+        {
+            // Usamos string.Format para insertar el número dinámicamente
+            throw new Exception(string.Format(MaxTicketsExceededMessage, MaxTicketsPerOrder));
+        }
 
         if (existingOrderForProduct != null)
         {
-            if (_orderItems.Sum(i => i.Quantity) + quantity > 4)
-            {
-                throw new Exception("Maximum 4 tickets per order allowed");
-            }
             existingOrderForProduct.AddUnits(quantity);
         }
         else
         {
-            if (quantity > 4) throw new Exception("Maximum 4 tickets per order allowed");
             _orderItems.Add(new OrderItem(eventId, eventName, unitPrice, quantity));
         }
     }
@@ -53,7 +63,6 @@ public class Order : Entity, IAggregateRoot
         if (Status == OrderStatus.StockConfirmed)
         {
             Status = OrderStatus.Paid;
-            // Aquí podríamos disparar un Domain Event "OrderPaid"
         }
     }
 }
